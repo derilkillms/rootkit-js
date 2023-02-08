@@ -1,0 +1,284 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>Rootkit</title>
+    <link rel="icon" type="image/png" href="assets/img/root.png">
+    <link rel="stylesheet" href="assets/css/window.css" />
+    <style type="text/css">
+
+     button[aria-label=Maximize]:hover {
+      background: #D7DDEF;
+    }
+    button[aria-label=Close]:hover {
+      background: red;
+    }
+    textarea{
+      resize: none;
+    }
+    .button {
+      display: inline-block;
+      background: #c0c0c0;
+      padding: 3px 25px;
+      font-family: arial;
+      font-size: 12px;
+      border: outset 2px;
+      position: relative;
+      width: 150px;
+    }
+
+
+    .button :active {
+     display: inline-block;
+     background: #c0c0c0;
+     padding: 3px 25px;
+     font-family: arial;
+     font-size: 12px;
+     border: outset 2px;
+     position: relative;
+     border: inset 2px;
+   }
+   table, td, th {
+    border: 1px solid;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .judul{
+    text-align: center; font-size: 15px; font-weight: bold; margin-top: -10px; margin-bottom: 10px;
+  }
+
+</style>
+</head>
+<body>
+
+
+  <div class="window" style="margin: 32px; width: 400px;position: fixed; top:-1%; left: 20%;">
+    <div class="title-bar">
+      <div class="title-bar-text"><img src="assets/img/root.png" width="16px"> Peluru Kertas</div>
+      <div class="title-bar-controls">
+       <button aria-label="Minimize"></button>
+       <button aria-label="Maximize"></button>
+       <button aria-label="Close"></button>
+     </div>
+   </div>
+   <ul role="menubar" class="can-hover">
+    <li role="menuitem" tabindex="0" aria-haspopup="true">
+      Scanner
+      <ul role="menu">
+        <li role="menuitem"><a href="#menu">Under Development</a></li>
+        
+      </ul>
+    </li>
+    <li role="menuitem" tabindex="0" aria-haspopup="true">
+      Googler
+      <ul role="menu">
+        <li role="menuitem"><a href="#menu">Under Development</a></li>
+        
+      </ul>
+    </li>
+    <li role="menuitem" tabindex="0" aria-haspopup="true">
+      Tool
+      <ul role="menu">
+        <li role="menuitem"><a onclick="showid('reverse')">Reverse IP</a></li>
+        <li role="menuitem"><a href="#menu">Line Editor</a></li>
+      </ul>
+    </li>
+
+    <li role="menuitem" tabindex="0" aria-haspopup="true">
+      Sql Dumper
+      <ul role="menu">
+        <li role="menuitem"><a href="#menu">Under Development</a></li>
+
+      </ul>
+    </li>
+    <li role="menuitem" tabindex="0" aria-haspopup="true">
+      Webdav
+      <ul role="menu">
+        <li role="menuitem"><a href="#menu">Multi Scanner</a></li>
+        <li role="menuitem"><a href="#menu">Singgle Scanner</a></li>
+
+        <li role="menuitem"><a onclick="showid('webdav')">ASP Shell Maker</a></li>
+      </ul>
+    </li>
+    <li role="menuitem" tabindex="0" aria-haspopup="true">
+      Help
+      <ul role="menu">
+        <li role="menuitem"><a href="#menu">View Help</a></li>
+        <li role="menuitem"><a onclick="showid('about')">About</a></li>
+      </ul>
+    </li>
+
+  </ul>
+
+  <div class="window-body">
+    <p><img width="100%" src="assets/img/patric.jpg" alt=""> </p>
+  </div>
+</div>
+
+<div id="about" class="window" style="margin: 32px; width: 450px; position: fixed; top:2%; left: 30%; display: none;">
+  <div class="title-bar">
+    <div class="title-bar-text"><img src="assets/img/doc.png" width="16px"> Peluru Kertas</div>
+    <div class="title-bar-controls">
+     <button aria-label="Minimize"></button>
+     <button aria-label="Maximize"></button>
+     <button onclick="closewin('about')" aria-label="Close"></button>
+   </div>
+ </div>
+ <div class="window-body" style="background: black">
+   <div id="snowContainer">
+    <p style="text-align: center; color: white;">
+      Peluru Kertas
+      <br>
+      Konoha ~ 2014
+    </p>
+  </div>
+
+</div>
+</div>
+
+
+
+<div id="webdav" class="window" style="margin: 32px; width: 450px; position: fixed; top:2%; left: 30%; display: none;">
+  <div class="title-bar">
+    <div class="title-bar-text"><img src="assets/img/doc.png" width="16px"> Peluru Kertas</div>
+    <div class="title-bar-controls">
+     <button aria-label="Minimize"></button>
+     <button aria-label="Maximize"></button>
+     <button onclick="closewin('webdav')" aria-label="Close"></button>
+   </div>
+ </div>
+
+
+ <div class="window-body">
+  <p>
+    <div class="judul">Webdav ASP Shell Maker</div>
+
+    <table>
+      <tr>
+        <td width="auto">
+          <textarea id="result" cols="40" rows="20">
+
+          </textarea>
+        </td>
+        <td width="auto" valign="top">
+          <button onclick="setting()" class="button">Setting</button>
+          <br>
+          <input type="file" name="" id="loadtarget" value="Add" style="display: none;" >
+          <input type="file" name="" id="loadsource" value="Add" style="display: none;" >
+          <button onclick="serang()" class="button">Serang !!!</button>
+          <br>
+          <button onclick="adddomain()" class="button">Add Site</button>
+          <br>
+          <p class="label">List of target:</p>
+
+          <select name="targetlist" id="targetlist" size="5" style="width: 100%" multiple="multiple">  
+
+          </select>  
+          <br>
+          <button onclick="loadtarget()" class="button">Load from file</button>
+          <button onclick="closewin('webdav')" class="button"><u>K</u>eluar</button>
+        </td>
+
+        <td id="setting" width="auto" style="display: none">
+          <input type='text' id="filename" placeholder="Nama File" value="version.txt" />
+
+          <textarea id="sourcedx" cols="40" rows="17" >Hacked by Peluru Kertas</textarea>
+
+          <button onclick="loadsource()" class="button" style="width: 100%">Load from file</button>
+        </td>
+      </tr>
+
+    </table>
+
+  </p>
+</div>
+</div>
+
+
+
+<div id="reverse" class="window" style="margin: 32px; width: 450px; position: fixed; top:2%; left: 30%; display: none;">
+  <div class="title-bar">
+    <div class="title-bar-text"><img src="assets/img/doc.png" width="16px"> Peluru Kertas</div>
+    <div class="title-bar-controls">
+     <button aria-label="Minimize"></button>
+     <button aria-label="Maximize"></button>
+     <button onclick="closewin('reverse')" aria-label="Close"></button>
+   </div>
+ </div>
+
+
+ <div class="window-body">
+  <p>
+    <div class="judul">Reverse IP</div>
+    <table>
+      <tr>
+        <td width="auto">
+          <textarea id="resultr" cols="40" rows="20">
+
+          </textarea>
+        </td>
+        <td width="auto" valign="top">
+
+          <input type="file" name="" id="loadtargetr" value="Add" style="display: none;" >
+          
+          <button onclick="reverse()" class="button">Reverse</button>
+          <br>
+          <button onclick="adddomainr()" class="button">Add Site</button>
+          <br>
+          <p class="label">List of target:</p>
+
+          <select name="targetlistr" id="targetlistr" size="5" style="width: 100%" multiple="multiple">  
+
+          </select>  
+          <br>
+          <button onclick="loadtargetr()" class="button">Load from file</button>
+          <button onclick="closewin('reverse')" class="button"><u>K</u>eluar</button>
+        </td>
+
+
+      </tr>
+
+    </table>
+
+  </p>
+</div>
+</div>
+
+
+
+<div id="kosong" class="window" style="margin: 32px; position: fixed; top:10%; left: 45%; display: none;">
+  <div class="title-bar">
+    <div class="title-bar-text"> Peluru Kertas</div>
+    <div class="title-bar-controls">
+
+     <button onclick="closewin('kosong')" aria-label="Close"></button>
+   </div>
+ </div>
+ <div class="window-body">
+  <p style="text-align: center;">Kosong !</p>
+</div>
+</div>
+
+<div id="berhasil" class="window" style="margin: 32px; position: fixed; top:10%; left: 45%; display: none;">
+  <div class="title-bar">
+    <div class="title-bar-text">Peluru Kertas</div>
+    <div class="title-bar-controls">
+
+     <button onclick="closewin('berhasil')" aria-label="Close"></button>
+   </div>
+ </div>
+ <div class="window-body" >
+  <p style="text-align: center;">
+   Berhasil !
+ </p>
+</div>
+</div>
+</body>
+</html>
+
+
+<script type="text/javascript" src="assets/js/webdav.js"></script>
+<script type="text/javascript" src="assets/js/reverse.js"></script>
