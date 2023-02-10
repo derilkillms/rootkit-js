@@ -6,6 +6,8 @@
 
 - Webdav ASP Shell Maker
 
+- Joomla Com_media Exploiter
+
 # How to run ?
 
 - Install CORS Extension
@@ -16,3 +18,6 @@ https://chrome.google.com/webstore/search/CORS
 
 ![image](https://user-images.githubusercontent.com/49135753/217458582-33318d65-6b98-44bf-812b-c6158425695a.png)
 ![image](https://user-images.githubusercontent.com/49135753/217458645-f28b4e29-63d2-48d7-aa63-efe5dbd1db3f.png)
+![image](https://user-images.githubusercontent.com/49135753/217993267-6b9fec7e-1e44-41b8-a325-3af0e88c67cd.png)
+
+
