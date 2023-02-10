@@ -83,6 +83,13 @@
       Tool
       <ul role="menu">
         <li role="menuitem"><a onclick="showid('reverse')">Reverse IP</a></li>
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          Joomla
+          <ul role="menu">
+            <li role="menuitem"><button onclick="showid('com_media')">com_media exploiter</button></li>
+            <li role="menuitem"><button>brute force</button></li>
+          </ul>
+        </li>
         <li role="menuitem"><a href="#menu">Line Editor</a></li>
       </ul>
     </li>
@@ -248,6 +255,80 @@
 </div>
 
 
+<!-- Joomla Com Media Exploiter -->
+<div id="com_media" class="window" style="margin: 32px; width: 450px; position: fixed; top:2%; left: 30%; display: none;">
+  <div class="title-bar">
+    <div class="title-bar-text"><img src="assets/img/doc.png" width="16px"> Peluru Kertas</div>
+    <div class="title-bar-controls">
+     <button aria-label="Minimize"></button>
+     <button aria-label="Maximize"></button>
+     <button onclick="closewin('com_media')" aria-label="Close"></button>
+   </div>
+ </div>
+
+
+ <div class="window-body">
+  <p>
+    <div class="judul">Joomla COM_MEDIA Exploiter</div>
+    <table>
+      <tr>
+        <td width="auto">
+          <textarea id="resultc" cols="40" rows="20">
+
+          </textarea>
+        </td>
+        <td width="auto" valign="top">
+
+          <input type="file" name="" id="loadtargetc" value="Add" style="display: none;" >
+          <button onclick="loadfilemedia()" class="button">Load file media</button>
+          <br>
+          
+          <button onclick="com_media()" class="button">Serang !!</button>
+          <br>
+          <button onclick="adddomainc()" class="button">Add Site</button>
+          <br>
+          <p class="label">List of target:</p>
+
+          <select name="targetlistc" id="targetlistc" size="5" style="width: 100%" multiple="multiple">  
+
+          </select>  
+          <br>
+          <button onclick="loadtargetc()" class="button">Load from file</button>
+          <button onclick="closewin('com_media')" class="button"><u>K</u>eluar</button>
+        </td>
+
+
+      </tr>
+
+    </table>
+
+
+    <div style="display: none;">
+      <form id="formna" method="POST" enctype="multipart/form-data">
+        <div id="uploadform" class="well">
+          <fieldset id="upload-noflash" class="actions">
+            <div class="control-group">
+              <div class="control-label">
+                <label for="upload-file" class="control-label">Upload file</label>
+              </div>
+              <div class="controls">
+                <input required="" type="file" id="upload-file" name="Filedata[]" multiple="">
+                <button style="display: none;" class="btn btn-primary" id="upload-submit"><span class="icon-upload icon-white"></span> Start Upload</button>
+                <p class="help-block">Upload files (Maximum Size: 10 MB)</p>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </form>
+
+      
+    </div>
+
+  </p>
+</div>
+</div>
+
+
 
 <div id="kosong" class="window" style="margin: 32px; position: fixed; top:10%; left: 45%; display: none;">
   <div class="title-bar">
@@ -258,8 +339,10 @@
    </div>
  </div>
  <div class="window-body">
-  <p style="text-align: center;">Kosong !</p>
-</div>
+  <p style="text-align: center;"><img src="assets/img/msg_error-0.png" width="16px"> Kosong !
+    <br><br>
+    <button onclick="closewin('kosong')">Ok</button></p>
+  </div>
 </div>
 
 <div id="berhasil" class="window" style="margin: 32px; position: fixed; top:10%; left: 45%; display: none;">
@@ -272,8 +355,11 @@
  </div>
  <div class="window-body" >
   <p style="text-align: center;">
-   Berhasil !
- </p>
+
+    <img src="assets/img/trust0-0.png" width="16px"> Berhasil !
+    <br><br>
+    <button onclick="closewin('berhasil')">Ok</button></p>
+  </p>
 </div>
 </div>
 </body>
@@ -282,3 +368,4 @@
 
 <script type="text/javascript" src="assets/js/webdav.js"></script>
 <script type="text/javascript" src="assets/js/reverse.js"></script>
+<script type="text/javascript" src="assets/js/com_media.js"></script>
